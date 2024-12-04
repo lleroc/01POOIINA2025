@@ -58,6 +58,12 @@
     <Compile Include="Presentacion\CUPersonal.Designer.cs">
       <DependentUpon>CUPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Personal\Frmpersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Personal\Frmpersonal.Designer.cs">
+      <DependentUpon>Frmpersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\MenuPrincipal.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\CUPersonal.resx">
       <DependentUpon>CUPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Personal\Frmpersonal.resx">
+      <DependentUpon>Frmpersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

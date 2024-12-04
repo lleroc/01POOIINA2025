@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using _01_Mi_Primera_Vez.Presentacion.POO;
+
 namespace _01_Mi_Primera_Vez.Presentacion
 {
     public partial class MenuPrincipal : Form
@@ -55,7 +55,6 @@ namespace _01_Mi_Primera_Vez.Presentacion
             PanelGeneral.Controls.Clear();
             frmPrueba.Dock = DockStyle.Fill;
             PanelGeneral.Controls.Add(frmPrueba);
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -65,8 +64,21 @@ namespace _01_Mi_Primera_Vez.Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmMostrar pruebas = new frmMostrar();
-            pruebas.Show();
+           
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
+
+/*
+ 
+ btnUsuarios
+txtNombre
+lstUsuarios
+
+ 
+ */

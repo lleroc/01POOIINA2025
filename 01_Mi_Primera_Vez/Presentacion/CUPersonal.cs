@@ -16,5 +16,12 @@ namespace _01_Mi_Primera_Vez.Presentacion
         {
             InitializeComponent();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Personal.Frmpersonal frmpersonal = new Personal.Frmpersonal("n");
+            frmpersonal.Text = "Nuevo Ingreso de Personal";
+            frmpersonal.ShowDialog();
+        }
     }
 }
