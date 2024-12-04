@@ -29,5 +29,15 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
                 lblFrmPersonal.Text = "Actualziacion de Personal";
             }
         }
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //MessageBox.Show(char.IsControl(e.KeyChar).ToString());
+            //MessageBox.Show(char.IsDigit(e.KeyChar).ToString());
+            // "."   "-"
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
+                e.Handled = true;
+            }
+        }
     }
 }

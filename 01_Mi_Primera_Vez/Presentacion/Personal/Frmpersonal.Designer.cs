@@ -31,18 +31,18 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
         {
             this.lblFrmPersonal = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.cmbPais = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,20 +56,20 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             this.lblFrmPersonal.Size = new System.Drawing.Size(86, 31);
             this.lblFrmPersonal.TabIndex = 0;
             this.lblFrmPersonal.Text = "label1";
-            this.lblFrmPersonal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblFrmPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cmbPais);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtSalario);
+            this.panel1.Controls.Add(this.txtCargo);
+            this.panel1.Controls.Add(this.txtNombres);
+            this.panel1.Controls.Add(this.txtCedula);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -78,15 +78,97 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             this.panel1.Size = new System.Drawing.Size(581, 486);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // label5
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.Location = new System.Drawing.Point(0, 392);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(581, 94);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(156, 204);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Pais";
+            // 
+            // cmbPais
+            // 
+            this.cmbPais.FormattingEnabled = true;
+            this.cmbPais.Items.AddRange(new object[] {
+            "Argentina",
+            "Brasil",
+            "Chile",
+            "Colombia",
+            "Ecuador",
+            "España",
+            "Estados Unidos",
+            "Peru",
+            "Venezuela"});
+            this.cmbPais.Location = new System.Drawing.Point(253, 204);
+            this.cmbPais.Name = "cmbPais";
+            this.cmbPais.Size = new System.Drawing.Size(307, 33);
+            this.cmbPais.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(52, 173);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 25);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Sueldo por Hora";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(140, 137);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 25);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Cargo";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 25);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Nombres y Apellidos";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(131, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Cédula";
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Location = new System.Drawing.Point(253, 168);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(307, 30);
+            this.txtSalario.TabIndex = 5;
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.Location = new System.Drawing.Point(253, 132);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(307, 30);
+            this.txtCargo.TabIndex = 4;
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.Location = new System.Drawing.Point(253, 96);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(307, 30);
+            this.txtNombres.TabIndex = 3;
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(253, 60);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(307, 30);
+            this.txtCedula.TabIndex = 2;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // button2
             // 
@@ -98,96 +180,15 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             this.button2.Text = "Guardar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // button1
             // 
-            this.textBox1.Location = new System.Drawing.Point(253, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(307, 30);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(253, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(307, 30);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(253, 132);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(307, 30);
-            this.textBox3.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(253, 168);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(307, 30);
-            this.textBox4.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(131, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Cédula";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 25);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Nombres y Apellidos";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(140, 137);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 25);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Cargo";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 173);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 25);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Sueldo por Hora";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Argentina",
-            "Brasil",
-            "Chile",
-            "Colombia",
-            "Ecuador",
-            "España",
-            "Estados Unidos",
-            "Peru",
-            "Venezuela"});
-            this.comboBox1.Location = new System.Drawing.Point(253, 204);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(307, 33);
-            this.comboBox1.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(156, 204);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 25);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Pais";
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Location = new System.Drawing.Point(0, 392);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(581, 94);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Frmpersonal
             // 
@@ -213,15 +214,15 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
         private System.Windows.Forms.Label lblFrmPersonal;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPais;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSalario;
+        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.TextBox txtNombres;
+        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }
