@@ -77,6 +77,7 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(581, 486);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label5
             // 
@@ -90,20 +91,10 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             // cmbPais
             // 
             this.cmbPais.FormattingEnabled = true;
-            this.cmbPais.Items.AddRange(new object[] {
-            "Argentina",
-            "Brasil",
-            "Chile",
-            "Colombia",
-            "Ecuador",
-            "España",
-            "Estados Unidos",
-            "Peru",
-            "Venezuela"});
             this.cmbPais.Location = new System.Drawing.Point(253, 204);
             this.cmbPais.Name = "cmbPais";
             this.cmbPais.Size = new System.Drawing.Size(307, 33);
-            this.cmbPais.TabIndex = 10;
+            this.cmbPais.TabIndex = 5;
             // 
             // label4
             // 
@@ -146,28 +137,28 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             this.txtSalario.Location = new System.Drawing.Point(253, 168);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(307, 30);
-            this.txtSalario.TabIndex = 5;
+            this.txtSalario.TabIndex = 4;
             // 
             // txtCargo
             // 
             this.txtCargo.Location = new System.Drawing.Point(253, 132);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(307, 30);
-            this.txtCargo.TabIndex = 4;
+            this.txtCargo.TabIndex = 3;
             // 
             // txtNombres
             // 
             this.txtNombres.Location = new System.Drawing.Point(253, 96);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(307, 30);
-            this.txtNombres.TabIndex = 3;
+            this.txtNombres.TabIndex = 2;
             // 
             // txtCedula
             // 
             this.txtCedula.Location = new System.Drawing.Point(253, 60);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(307, 30);
-            this.txtCedula.TabIndex = 2;
+            this.txtCedula.TabIndex = 1;
             this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // button2
@@ -176,9 +167,10 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             this.button2.Location = new System.Drawing.Point(0, 298);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(581, 94);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 6;
             this.button2.Text = "Guardar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -186,7 +178,7 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             this.button1.Location = new System.Drawing.Point(0, 392);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(581, 94);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
             // 

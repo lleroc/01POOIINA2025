@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _01_Mi_Primera_Vez.Logica;
 
 namespace _01_Mi_Primera_Vez.Presentacion.Personal
 {
@@ -18,7 +19,7 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             InitializeComponent();
             if (modo != "n") this.modoEdision = true;            
         }
-
+        
         private void Frmpersonal_Load(object sender, EventArgs e)
         {
             if (!this.modoEdision)
@@ -28,16 +29,50 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             else { 
                 lblFrmPersonal.Text = "Actualziacion de Personal";
             }
+
+            var listapaises = new cls_pais();
+            
+            cmbPais.DataSource = listapaises.leer();
+            cmbPais.ValueMember = "IdPais";
+            cmbPais.DisplayMember = "Detalle";
+
         }
 
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //MessageBox.Show(char.IsControl(e.KeyChar).ToString());
-            //MessageBox.Show(char.IsDigit(e.KeyChar).ToString());
-            // "."   "-"
+          
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
                 e.Handled = true;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var dto_personal = new Datos.dto_personal {
+            cargo = txtCargo.Text,
+            cedula = txtCedula.Text,
+            idPais = (int)cmbPais.SelectedValue,
+            nombre = txtNombres.Text,
+            sueldo = decimal.Parse(txtSalario.Text)
+            };
+
+            var cls_personal = new cls_personal();
+
+            if (cls_personal.Insertar(dto_personal) == "ok")
+            {
+                MessageBox.Show("Se guardo con exito");
+                this.Close();
+            }
+            else {
+                MessageBox.Show("Error al guardar");
+            }
+
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

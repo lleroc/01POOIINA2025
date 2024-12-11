@@ -17,68 +17,20 @@ namespace _01_Mi_Primera_Vez.Presentacion
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
-            /*
-             
-            black
-            greeb
-            white
-            
-            
-                  0-255  0-255  0-255
-            rgb (red  , green, blue)
-
-
-
-
-                  25    200    0      0 - 1
-            rgba(red, green, blue, transparencia)
-
-             
-             
-             
-             
-             
-             
-             */
-
-
-
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnPerosnal_Click(object sender, EventArgs e)
         {
             CUPersonal frmPrueba = new CUPersonal();
             PanelGeneral.Controls.Clear();
             frmPrueba.Dock = DockStyle.Fill;
             PanelGeneral.Controls.Add(frmPrueba);
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
+            
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-           
+
         }
     }
 }
 
-/*
- 
- btnUsuarios
-txtNombre
-lstUsuarios
-
- 
- */

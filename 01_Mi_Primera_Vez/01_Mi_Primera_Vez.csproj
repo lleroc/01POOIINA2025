@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\conexion.cs" />
+    <Compile Include="Datos\dto_pais.cs" />
+    <Compile Include="Datos\dto_personal.cs" />
+    <Compile Include="Logica\cls_pais.cs" />
+    <Compile Include="Logica\cls_personal.cs" />
     <Compile Include="Presentacion\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,10 +103,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Datos\" />
-    <Folder Include="Logica\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\grupo-de-trabajo.png" />
   </ItemGroup>

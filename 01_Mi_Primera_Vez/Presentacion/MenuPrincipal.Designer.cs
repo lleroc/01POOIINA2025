@@ -37,10 +37,10 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.PanelGeneral = new System.Windows.Forms.Panel();
             this.Panel_Bienvenida = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -124,7 +124,7 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.button2.Text = "Personal";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.btnPerosnal_Click);
             // 
             // button1
             // 
@@ -140,7 +140,6 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.button1.Text = "Asistencia";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -152,6 +151,17 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.panel3.Size = new System.Drawing.Size(212, 206);
             this.panel3.TabIndex = 0;
             // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(212, 97);
+            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
             // PanelGeneral
             // 
             this.PanelGeneral.BackColor = System.Drawing.Color.SkyBlue;
@@ -161,7 +171,6 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.PanelGeneral.Name = "PanelGeneral";
             this.PanelGeneral.Size = new System.Drawing.Size(873, 950);
             this.PanelGeneral.TabIndex = 1;
-            this.PanelGeneral.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // Panel_Bienvenida
             // 
@@ -182,18 +191,6 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.label2.TabIndex = 0;
             this.label2.Text = "BIENVENIDO AL SISTEMA DE CONTROL DE ASISTENCIAS";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(212, 97);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // MenuPrincipal
             // 
