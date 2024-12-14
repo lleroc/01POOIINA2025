@@ -95,6 +95,8 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             this.cmbPais.Name = "cmbPais";
             this.cmbPais.Size = new System.Drawing.Size(307, 33);
             this.cmbPais.TabIndex = 5;
+            this.cmbPais.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbPais_KeyDown);
+            this.cmbPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPais_KeyPress);
             // 
             // label4
             // 
@@ -159,7 +161,9 @@ namespace _01_Mi_Primera_Vez.Presentacion.Personal
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(307, 30);
             this.txtCedula.TabIndex = 1;
+            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
+            this.txtCedula.Leave += new System.EventHandler(this.txtCedula_Leave);
             // 
             // button2
             // 

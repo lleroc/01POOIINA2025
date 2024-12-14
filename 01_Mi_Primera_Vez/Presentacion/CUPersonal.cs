@@ -36,6 +36,10 @@ namespace _01_Mi_Primera_Vez.Presentacion
         }
 
         public void cargaGrilla() {
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
             var logicaPersonal = new cls_personal();
             var autoincrmento = new DataGridViewTextBoxColumn {
             HeaderText="N.-",
@@ -48,7 +52,6 @@ namespace _01_Mi_Primera_Vez.Presentacion
             Text = "Editar",
             UseColumnTextForButtonValue = true
             };
-            
 
             var btnEliminar = new DataGridViewButtonColumn
             {
@@ -63,7 +66,7 @@ namespace _01_Mi_Primera_Vez.Presentacion
             dataGridView1.Columns["cargo"].HeaderText = "Cargo";
             dataGridView1.Columns["sueldo"].HeaderText = "Salario";
             dataGridView1.Columns["Detalle"].HeaderText = "Detalle";
-            //dataGridView1.Columns["IdPersonal"].Visible = false;
+            dataGridView1.Columns["IdPersonal"].Visible = false;
             dataGridView1.Columns["IdPais"].Visible = false;
 
             dataGridView1.Columns.Add(btnEditar);
@@ -80,7 +83,9 @@ namespace _01_Mi_Primera_Vez.Presentacion
         }
 
         public void EditarPersonal(int id) {
-            MessageBox.Show("Estoy en el editar y el id es: " + id);
+            Personal.Frmpersonal frmpersonal = new Personal.Frmpersonal(id.ToString());
+            frmpersonal.ShowDialog();
+            this.cargaGrilla();
         }
 
         public void ElimnarPersonal(int id)

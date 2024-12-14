@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using _01_Mi_Primera_Vez.Datos;
+using System.Globalization;
+
 namespace _01_Mi_Primera_Vez.Logica
 {
    
    public class cls_personal
     {
         private readonly conexion cn = new conexion();
-
+        //insertar
         public string Insertar(dto_personal Personal) {
 
             using (var conexion = cn.obtenerConexion())
@@ -71,8 +73,77 @@ namespace _01_Mi_Primera_Vez.Logica
             return listapersonal;
         }
         //uno  select * where
-        //insertar
+
+        public dto_personal uno(int id) {
+            using (var conexion = cn.obtenerConexion())
+            {
+                string cadena = "select * from personal where IdPersonal=" + id;
+                using (var comando = new SqlCommand(cadena, conexion))
+                {
+                    conexion.Open();
+                    using (var lector = comando.ExecuteReader())
+                    {
+                        lector.Read();
+                        var personal = new dto_personal 
+                        {
+                            IdPersonal = (int)lector["IdPersonal"],
+                            cedula = lector["cedula"].ToString(),
+                            nombre = lector["nombre"].ToString(),
+                            cargo = lector["cargo"].ToString(),
+                            sueldo = (decimal)lector["sueldo"],
+                            idPais = (int)lector["idPais"],
+                        };
+                        return personal;
+                    }
+                }
+            }     
+        }
+
         //actualziar
+
+        public string actualizar(dto_personal personal) {
+            using (var conexion = cn.obtenerConexion())
+            {
+                string cadeba = "update Personal set " +
+                    $"cargo='{personal.cargo}', cedula='{personal.cedula}'," +
+                    $"idPais={personal.idPais},nombre='{personal.nombre}'," +
+                    $"sueldo={personal.sueldo} where IdPersonal={personal.IdPersonal}";
+                using (var comando = new SqlCommand(cadeba, conexion))
+                {
+                    try
+                    {
+                        conexion.Open();
+                        comando.ExecuteNonQuery();
+                        return "ok";
+                    }
+                    catch (Exception e)
+                    {
+                        return e.Message;
+                    }
+                }
+            }
+        }
+
+        public bool duplicadoCedula(string cedula) {
+            using (var conexion = cn.obtenerConexion())
+            {
+                string cadena = $"select count(*) as repetidos from personal where cedula='{cedula}'";
+                using (var comando = new SqlCommand(cadena, conexion))
+                {
+                    conexion.Open();
+                    using (var lector = comando.ExecuteReader())
+                    {
+                        lector.Read();
+                        if ((int)lector["repetidos"] > 0)
+                        {
+                            return true; // verdadero - que hay numeros de cedula repetidos
+                        }
+                        else { return false; }
+                    }
+                }
+            }
+        }
+
         //eliminar
     }
 }
