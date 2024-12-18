@@ -31,6 +31,12 @@ namespace _01_Mi_Primera_Vez.Presentacion
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Asistencias.frmAsistencias frmAsistencias = new Asistencias.frmAsistencias();
+            frmAsistencias.ShowDialog();
+        }
     }
 }
 

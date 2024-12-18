@@ -83,6 +83,7 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -93,6 +94,7 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(383, 30);
             this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // dataGridView1
             // 
@@ -119,6 +121,7 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1249, 181);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // CUPersonal
             // 

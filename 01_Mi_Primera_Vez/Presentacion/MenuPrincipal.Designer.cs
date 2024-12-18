@@ -31,21 +31,21 @@ namespace _01_Mi_Primera_Vez.Presentacion
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.PanelGeneral = new System.Windows.Forms.Panel();
             this.Panel_Bienvenida = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.PanelGeneral.SuspendLayout();
             this.Panel_Bienvenida.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,6 +73,57 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.label1.TabIndex = 5;
             this.label1.Text = "Control de Asistencia";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btnUsuarios);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(212, 206);
+            this.panel3.TabIndex = 0;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(212, 97);
+            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // PanelGeneral
+            // 
+            this.PanelGeneral.BackColor = System.Drawing.Color.SkyBlue;
+            this.PanelGeneral.Controls.Add(this.Panel_Bienvenida);
+            this.PanelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelGeneral.Location = new System.Drawing.Point(212, 0);
+            this.PanelGeneral.Name = "PanelGeneral";
+            this.PanelGeneral.Size = new System.Drawing.Size(873, 950);
+            this.PanelGeneral.TabIndex = 1;
+            // 
+            // Panel_Bienvenida
+            // 
+            this.Panel_Bienvenida.Controls.Add(this.label2);
+            this.Panel_Bienvenida.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Panel_Bienvenida.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Bienvenida.Name = "Panel_Bienvenida";
+            this.Panel_Bienvenida.Size = new System.Drawing.Size(873, 950);
+            this.Panel_Bienvenida.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(873, 950);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "BIENVENIDO AL SISTEMA DE CONTROL DE ASISTENCIAS";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -140,57 +191,7 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.button1.Text = "Asistencia";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.btnUsuarios);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(212, 206);
-            this.panel3.TabIndex = 0;
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(212, 97);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // PanelGeneral
-            // 
-            this.PanelGeneral.BackColor = System.Drawing.Color.SkyBlue;
-            this.PanelGeneral.Controls.Add(this.Panel_Bienvenida);
-            this.PanelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelGeneral.Location = new System.Drawing.Point(212, 0);
-            this.PanelGeneral.Name = "PanelGeneral";
-            this.PanelGeneral.Size = new System.Drawing.Size(873, 950);
-            this.PanelGeneral.TabIndex = 1;
-            // 
-            // Panel_Bienvenida
-            // 
-            this.Panel_Bienvenida.Controls.Add(this.label2);
-            this.Panel_Bienvenida.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_Bienvenida.Location = new System.Drawing.Point(0, 0);
-            this.Panel_Bienvenida.Name = "Panel_Bienvenida";
-            this.Panel_Bienvenida.Size = new System.Drawing.Size(873, 950);
-            this.Panel_Bienvenida.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(873, 950);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "BIENVENIDO AL SISTEMA DE CONTROL DE ASISTENCIAS";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MenuPrincipal
             // 
@@ -207,10 +208,10 @@ namespace _01_Mi_Primera_Vez.Presentacion
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.PanelGeneral.ResumeLayout(false);
             this.Panel_Bienvenida.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

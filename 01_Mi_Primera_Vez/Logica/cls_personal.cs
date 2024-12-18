@@ -99,6 +99,38 @@ namespace _01_Mi_Primera_Vez.Logica
             }     
         }
 
+        //uno con parametro cedula\
+        public dto_personal uno(string cedula)
+        {
+            using (var conexion = cn.obtenerConexion())
+            {
+                string cadena = $"select * from personal where cedula='{cedula}'" ;
+                using (var comando = new SqlCommand(cadena, conexion))
+                {
+                    conexion.Open();
+                    using (var lector = comando.ExecuteReader())
+                    {
+                        if (lector.Read())
+                        {
+                            var personal = new dto_personal
+                            {
+                                IdPersonal = (int)lector["IdPersonal"],
+                                cedula = lector["cedula"].ToString(),
+                                nombre = lector["nombre"].ToString(),
+                                cargo = lector["cargo"].ToString(),
+                                sueldo = (decimal)lector["sueldo"],
+                                idPais = (int)lector["idPais"],
+                            };
+                            return personal;
+                        }
+                        else {
+                            return new dto_personal();
+                        }
+                    }
+                }
+            }
+        }
+
         //actualziar
 
         public string actualizar(dto_personal personal) {
@@ -145,5 +177,61 @@ namespace _01_Mi_Primera_Vez.Logica
         }
 
         //eliminar
+        public bool eliminar(int id) {
+            using (var conexion = cn.obtenerConexion())
+            {
+                string cadena = $"delete from personal where IdPersonal={id}";
+                using (var comando = new SqlCommand(cadena, conexion))
+                {
+                    try
+                    {
+                        conexion.Open();
+                        comando.ExecuteNonQuery();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        
+        public List<dto_personal> buscador(string texto)
+        {
+            List<dto_personal> listapersonal = new List<dto_personal>();
+
+            using (var conexion = cn.obtenerConexion())//1 llamo a la conexion con la base
+            {
+                string cadena = "SELECT IdPersonal, cedula, nombre, cargo, sueldo, Paises.IdPais, Paises.Detalle " +
+                    "FROM Personal inner join Paises on Paises.IdPais = Personal.idPais " +
+                    $"where nombre like '%{texto}%'"; //2 creo la sentencia sql
+                using (var comando = new SqlCommand(cadena, conexion)) //3 ejecuto el comando 
+                {
+                    conexion.Open(); //4 abrir la conexion
+                    using (var lector = comando.ExecuteReader())//5 cargar el lector la informacion
+                    {
+                        while (lector.Read())  //6 recorrer el lector para obtener la iformacion
+                        {
+                            var personal = new dto_personal //7  creo un objeto dto_personal para asiganr lo que trae de la base de datos
+                            {
+                                IdPersonal = (int)lector["IdPersonal"],
+                                cedula = lector["cedula"].ToString(),
+                                nombre = lector["nombre"].ToString(),
+                                cargo = lector["cargo"].ToString(),
+                                sueldo = (decimal)lector["sueldo"],
+                                Detalle = lector["Detalle"].ToString()
+                            };
+                            listapersonal.Add(personal); //8 agregar a la lista el objeto
+                        }
+                    }
+                }
+            }
+
+            return listapersonal;
+
+        }
+
     }
 }

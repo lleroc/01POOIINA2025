@@ -27,30 +27,35 @@ namespace _01_Mi_Primera_Vez.Presentacion
         private void CUPersonal_Load(object sender, EventArgs e)
         {
             //llamar cls_personal cargar el procedmiento donde se muestren todos los registros de la BDD
-            this.cargaGrilla();
+            this.cargaGrilla(1);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+        /**
+         int numero = Parametro para identificar el tipo de carga ene la grilla
+        1 => llama en lla clase clsperosnal al metodo todos
+        2 => llama en la clase clspersonal al metodo buscar
+         */
+        public void cargaGrilla(int numero) {
 
-        public void cargaGrilla() {
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
             var logicaPersonal = new cls_personal();
             var autoincrmento = new DataGridViewTextBoxColumn {
-            HeaderText="N.-",
-            ReadOnly = true
+                HeaderText = "N.-",
+                ReadOnly = true
             };
             dataGridView1.Columns.Add(autoincrmento);
-            
+
             var btnEditar = new DataGridViewButtonColumn {
-            HeaderText = "Editar",
-            Text = "Editar",
-            UseColumnTextForButtonValue = true
+                HeaderText = "Editar",
+                Text = "Editar",
+                UseColumnTextForButtonValue = true
             };
 
             var btnEliminar = new DataGridViewButtonColumn
@@ -59,8 +64,14 @@ namespace _01_Mi_Primera_Vez.Presentacion
                 Text = "Eliminar",
                 UseColumnTextForButtonValue = true
             };
-           
-            dataGridView1.DataSource = logicaPersonal.todos();
+            if (numero == 1)
+            {
+                dataGridView1.DataSource = logicaPersonal.todos();
+            }
+            else {
+                dataGridView1.DataSource = logicaPersonal.buscador(txtBuscar.Text.Trim());
+            }
+
             dataGridView1.Columns["cedula"].HeaderText = "Cédula";
             dataGridView1.Columns["nombre"].HeaderText = "Nombre";
             dataGridView1.Columns["cargo"].HeaderText = "Cargo";
@@ -85,12 +96,29 @@ namespace _01_Mi_Primera_Vez.Presentacion
         public void EditarPersonal(int id) {
             Personal.Frmpersonal frmpersonal = new Personal.Frmpersonal(id.ToString());
             frmpersonal.ShowDialog();
-            this.cargaGrilla();
+            this.cargaGrilla(1);
         }
 
         public void ElimnarPersonal(int id)
         {
-            MessageBox.Show("Estoy en el eliminar y el id es: " + id);
+            DialogResult cuadrodialogo = MessageBox.Show("Esta srguro que desea eliminar el personal"
+                ,"Eliminar Personal", MessageBoxButtons.YesNo);
+            if (cuadrodialogo == DialogResult.Yes)
+            {
+                var cls_personal = new cls_personal();
+                if (cls_personal.eliminar(id))
+                {
+                    MessageBox.Show("El registro se a eliminado con exito");
+                    this.cargaGrilla(1);
+                }
+                else {
+                    MessageBox.Show("Ocurrio un error al eliminar");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El usuario cancelo la eliminacion");
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -110,6 +138,21 @@ namespace _01_Mi_Primera_Vez.Presentacion
                 }
             }
 
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.cargaGrilla(2);
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.cargaGrilla(2);
         }
     }
 }
